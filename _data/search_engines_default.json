@@ -1,0 +1,18 @@
+[
+  {
+    "link": "https://www.google.com/search?q=",
+    "icon": "google"
+  },
+  {
+    "link": "https://stackoverflow.com/search?q=",
+    "icon": "stackoverflow"
+  },
+  {
+    "link": "https://www.youtube.com/search?q=",
+    "icon": "youtube"
+  },
+  {
+    "link": "https://en.wikipedia.org/w/index.php?title=Special%3ASearch&fulltext=1&search=",
+    "icon": "wikipedia"
+  }
+]

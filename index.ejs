@@ -1,0 +1,95 @@
+<%
+function getSiteIcon(slug){
+    const icon_key = slug[0].toUpperCase()+slug.substring(1).toLowerCase();
+    let icon = icons[`si${icon_key}`];
+    let icon2 = computedicons[slug];
+    if (icon) {
+        return icon.svg;
+    } else if (icon2) {
+        return icon2;
+    }
+    return "";
+}
+%>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+    />
+    <title>START PAGE</title>
+    <script src="index.js"></script>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="page">
+      <div id="search" class="card div2">
+        <div>
+          <% for(const search of search_engines){ %>
+          <button class="searchselect" value="<%=search.link%>">
+            <%-getSiteIcon(search.icon)%>
+          </button>
+          <% } %>
+        </div>
+        <input
+          id="currentengine"
+          name=""
+          type="text"
+          value="https://www.google.com/search?q="
+          hidden=""
+        />
+        <form id="searchform">
+          <input name="search" type="text" value="" autofocus="" />
+        </form>
+        <script>
+          const form = document.forms["searchform"];
+          form.addEventListener("submit", searchWithEngine);
+          for (btn of document.querySelectorAll(".searchselect")) {
+            btn.addEventListener("click", changeEngine);
+          }
+        </script>
+      </div>
+      <div id="pagesdiv">
+          <% for (const [name,page] of Object.entries(pages)) {%>
+              <% let slug = page["icon"]%>
+        <li class="linkitem">
+          <a href="<%=page.link%>">
+            <%-getSiteIcon(slug)%>
+            <span class="linkname"><%=name%></span>
+          </a>
+        </li>
+        <% } %>
+      </div>
+      <div id="weather">
+        <div id="weatherbar">
+          <% for (const o of new Set(Object.values(weather_map))){ %>
+          <span class="weathericon <%=o%> hide"><%-weathericons[o]%></span>
+          <% } %>
+        </div>
+        <table id="weatherdata">
+          <tr>
+            <td>Temperature Range</td>
+            <td id="w_tmin"></td>
+            <td id="w_tmax"></td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>Apparent Temperature Range</td>
+            <td id="w_a_tmin"></td>
+            <td id="w_a_tmax"></td>
+          </tr>
+          <tr>
+            <td>Current Temperature</td>
+            <td rowspan="2" id="w_ctemp"></td>
+          </tr>
+        </table>
+        <script type="text/javascript">
+          weather_load(<%-weather.latitude%>, <%-weather.longitude%>);
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

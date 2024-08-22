@@ -1,0 +1,8 @@
+_site/
+dist/
+package-lock.json
+node_modules/
+_static/public/assets/css/
+_data/pages.json
+_data/search_engines.json
+_data/weather.json

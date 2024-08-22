@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^2.0.1",
+    "@sherby/eleventy-plugin-files-minifier": "^1.1.1",
+    "@svg-icons/fa-solid": "^1.87.0",
+    "@svg-icons/remix-fill": "^1.86.0",
+    "promised-sqlite3": "^2.1.0",
+    "simple-icons": "^13.6.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "prettier": "3.3.3",
+    "prettier-plugin-ejs": "^1.0.3"
+  },
+  "scripts": {
+    "load-defaults": "cp _data/pages_default.json _data/pages.json && cp _data/search_engines_default.json _data/search_engines.json && cp _data/weather_default.json _data/weather.json",
+    "serve": "npx eleventy --serve"
+  }
+}

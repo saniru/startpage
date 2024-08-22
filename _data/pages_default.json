@@ -1,0 +1,34 @@
+{
+  "Netflix": {
+    "link": "https://www.netflix.com",
+    "icon": "netflix"
+  },
+  "Gmail":{
+    "link":"https://mail.google.com/mail/?authuser=0",
+    "icon":"gmail"
+  },
+  "WhatsApp": {
+    "link": "https://web.whatsapp.com",
+    "icon": "whatsapp"
+  },
+  "Discord": {
+    "link": "https://discord.com/channels/@me",
+    "icon": "discord"
+  },
+  "Youtube": {
+    "link": "https://www.youtube.com",
+    "icon": "youtube"
+  },
+  "Twitch": {
+    "link": "https://www.twitch.tv",
+    "icon": "twitch"
+  },
+  "Spotify": {
+    "link": "https://open.spotify.com",
+    "icon": "spotify"
+  },
+  "SoundCloud": {
+    "link": "https://soundcloud.com",
+    "icon": "soundcloud"
+  }
+}
